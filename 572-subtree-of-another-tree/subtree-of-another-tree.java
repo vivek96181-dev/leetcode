@@ -35,7 +35,7 @@ class Solution {
         // }
         // return is;
         if(root==null) return false;
-        if(subRoot==null) return false;
+        if(subRoot==null) return true;
         if(isTheir(root,subRoot)) return true;
         return isSubtree(root.right,subRoot) || isSubtree(root.left,subRoot);
     }
