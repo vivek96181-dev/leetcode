@@ -17,23 +17,27 @@ class Solution {
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
         // TreeNode r=is(root,subRoot.val);
         // return isTheir(r,subRoot);
-        Queue<TreeNode> q=new LinkedList<>();
-        q.add(root);
-        boolean is=false;
-        while(!q.isEmpty()){
-            int n=q.size();
-            for(int i=0;i<n;i++){
-                TreeNode ne=q.poll();
-                if(ne.val==subRoot.val){
-                    if(isTheir(ne,subRoot)) return true;
-                    is=isTheir(ne,subRoot);
-                }
-                if(ne.left!=null) q.add(ne.left);
-                if(ne.right!=null) q.add(ne.right);
+        // Queue<TreeNode> q=new LinkedList<>();
+        // q.add(root);
+        // boolean is=false;
+        // while(!q.isEmpty()){
+        //     int n=q.size();
+        //     for(int i=0;i<n;i++){
+        //         TreeNode ne=q.poll();
+        //         if(ne.val==subRoot.val){
+        //             if(isTheir(ne,subRoot)) return true;
+        //             is=isTheir(ne,subRoot);
+        //         }
+        //         if(ne.left!=null) q.add(ne.left);
+        //         if(ne.right!=null) q.add(ne.right);
 
-            }
-        }
-        return is;
+        //     }
+        // }
+        // return is;
+        if(root==null) return false;
+        if(subRoot==null) return false;
+        if(isTheir(root,subRoot)) return true;
+        return isSubtree(root.right,subRoot) || isSubtree(root.left,subRoot);
     }
     // public TreeNode is(TreeNode root,int value){
     //     if(root==null){
