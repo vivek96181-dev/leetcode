@@ -17,6 +17,7 @@ class Solution {
         return d1*d1+d2*d2<=(long)r1*r1;
     }
     public int dfs(int[][] bombs,int i,boolean[] visited){
+        if(visited[i]) return 0;
         visited[i]=true;
         int c=1;
         for(int j=0;j<bombs.length;j++){
