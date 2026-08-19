@@ -3,12 +3,7 @@ class Solution {
         int n=rooms.size();
         boolean[] visited=new boolean[n];
         Queue<Integer> q=new LinkedList<>();
-        for(int i=0;i<n;i++){
-            if(rooms.get(i).size()!=0){
-                q.add(i);
-                break;
-            }
-        }
+        q.add(0);
         while(!q.isEmpty()){
             int k=q.poll();
             visited[k]=true;
