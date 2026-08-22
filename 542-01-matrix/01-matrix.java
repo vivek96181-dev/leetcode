@@ -8,7 +8,7 @@ class Solution {
                 if(mat[i][j]==0){
                     q.add(new int[]{i,j});
                 }else{
-                    mat[i][j]=m*n;
+                    mat[i][j]=-1;
                 }
             }
         }
@@ -18,7 +18,7 @@ class Solution {
             for(int[] i:dir){
                 int r=arr[0]+i[0];
                 int c=arr[1]+i[1];
-                if(r>=0 && c>=0 && r<m && c<n && mat[r][c]>mat[arr[0]][arr[1]]){
+                if(r>=0 && c>=0 && r<m && c<n && mat[r][c]==-1){
                     q.add(new int[]{r,c});
                     mat[r][c]=mat[arr[0]][arr[1]]+1;
                 }
