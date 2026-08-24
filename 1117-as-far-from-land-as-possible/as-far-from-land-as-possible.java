@@ -13,6 +13,7 @@ class Solution {
                 }
             }
         }
+        if(q.isEmpty() || q.size()==m*m) return -1;
         int[][] dir={{1,0},{0,1},{-1,0},{0,-1}};
         int max=-1;
         while(!q.isEmpty()){
