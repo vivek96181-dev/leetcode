@@ -6,19 +6,14 @@ class Solution {
 
         for (int i = 1; i < prices.length; i++) {
 
-            // Find a cheaper buying price
-            if (prices[i] < buy) {
-                buy = prices[i];
-            }
+            // Better BUY
+            buy = Math.min(buy, prices[i] - profit);
 
-            // Sell when the current price gives profit
-            else if (prices[i] - buy > fee) {
-
-                profit += prices[i] - buy - fee;
-
-                // Start looking for the next transaction
-                buy = prices[i] - fee;
-            }
+            // SELL
+            profit = Math.max(
+                profit,
+                prices[i] - buy - fee
+            );
         }
 
         return profit;
