@@ -13,15 +13,15 @@ class Solution {
             }
             l[f].add(c);
         }
-        String ans="";
+        StringBuilder sb=new StringBuilder(n);
         for(int i=n;i>0;i--){
             if(l[i]!=null){
                 for(char c:l[i]){
-                    ans+=add(c,i);
+                    sb.append(String.valueOf(c).repeat(i));
                 }
             }
         }
-        return ans;
+        return sb.toString();
     }
     public String add(char c,int n){
         String s="";
